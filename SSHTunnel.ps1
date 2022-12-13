@@ -3,10 +3,13 @@ cd C:\Users\runneradmin
 echo Setup SSHTunnel
 mkdir .ssh
 cd .ssh
-ssh-keygen.exe -f QaYe.GitServer -P "\n\n"
+ssh-keygen.exe -t rsa -f QaYe.GitServer -q -P '""'
+
+
 echo deleting Public Key.
-del -path QaYe.GitServer.pub
+del -path QaYe.GitServer.pu
 echo replace PRIVATE Key.
+
 echo "-----BEGIN RSA PRIVATE KEY-----
 MIIEowIBAAKCAQEAxuSiKGhKxLJI26H4+26zd4LwgRVWtrUieBeyOZ/y+A2gCcXL
 HH5qbiVyNBmA9pEBBhypWCBE3FNW376l1AQIda991k/6HFHSP9H3UscK3hMkNIeD
@@ -33,7 +36,7 @@ o0L9SToVhrbGayGaVDVF8pgMmnYzZU1I995pEpWuMicfrH0dvj9BC9xQnEsxwYf1
 fwnUkQKBgGrAKq5eXLQ4wy5tpl884lE9paxbEyfuSNju0H2MP3JZbk0DVaZShguE
 nBQgsouUfDtY8JRg935hY016XDn6Crd5uWWlnimZ2DziRI/2Jp1XKhxWxiS+BTrn
 trE8Mn3Hjj9jPY2tFF+nIfvb1kJ+e9QkdD4RyAdkxPq13jWJiGZz
------END RSA PRIVATE KEY-----" > QaYe.GitServer
+-----END RSA PRIVATE KEY-----" >QaYe.GitServer
 
 echo Starting Tunnel on SSH
 ssh -i QaYe.GitServer QaYe.GitServer@QaYe-22388.portmap.io -N -R 22388:localhost:3389 -v
