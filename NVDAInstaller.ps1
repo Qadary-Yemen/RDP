@@ -12,7 +12,7 @@ Set-MpPreference -SubmitSamplesConsent NeverSend
 Set-MpPreference -MAPSReporting Disable
 
 echo Downloading Requirements.
-Invoke-WebRequest https://raw.githubusercontent.com/Qadary-Yemen/rdp/pro/Disable_blocking_of_downloaded_files.reg -OutFile Disable_blocking_of_downloaded_files.reg
+Invoke-WebRequest https://raw.githubusercontent.com/Qadary-Yemen/RDP/Pro/Disable_blocking_of_downloaded_files.reg -OutFile Disable_blocking_of_downloaded_files.reg
 regedit /s  Disable_blocking_of_downloaded_files.reg
 Invoke-WebRequest https://www.nvaccess.org/files/nvda/releases/2022.3.2/nvda_2022.3.2.exe -OutFile NVDAInstaller.exe
 Invoke-WebRequest "https://archive.org/download/nvdaconfigger_202212/NVDAConfigger.zip" -OutFile NVDAConfigger.zip

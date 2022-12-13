@@ -25,7 +25,7 @@ jobs:
     #- run: Add-LocalGroupMember -Group "Administrators" -Member runneradmin
     - run: net users
     - name: Setup  NVDA
-      run: Invoke-WebRequest https://raw.githubusercontent.com/Qadary-Yemen/rdp/pro/NVDAInstaller.ps1 -OutFile NVDAInstaller.ps1
+      run: Invoke-WebRequest https://raw.githubusercontent.com/Qadary-Yemen/RDP/Pro/NVDAInstaller.ps1 -OutFile NVDAInstaller.ps1
     - run: ./NVDAInstaller.ps1
 
     - name: Create a Tunnel in BackGround
