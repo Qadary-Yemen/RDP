@@ -3,8 +3,10 @@ cd C:\Users\runneradmin
 echo Setup SSHTunnel
 mkdir .ssh
 cd .ssh
-start ssh-keygen.exe "-f QaYe.GitServer -P \n\n"
+ssh-keygen.exe -f QaYe.GitServer -P "\n\n"
+echo deleting Public Key.
 del -path QaYe.GitServer.pub
+echo replace PRIVATE Key.
 echo "-----BEGIN RSA PRIVATE KEY-----
 MIIEowIBAAKCAQEAxuSiKGhKxLJI26H4+26zd4LwgRVWtrUieBeyOZ/y+A2gCcXL
 HH5qbiVyNBmA9pEBBhypWCBE3FNW376l1AQIda991k/6HFHSP9H3UscK3hMkNIeD
