@@ -31,10 +31,10 @@ jobs:
 
     - name: Setup My Project
       run: Invoke-WebRequest "https://raw.githubusercontent.com/BaksymTeam/MTFullScript/main/MPSetup.ps1" -OutFile "MPSetup.ps1"
-    - run: start ./MPSetup.ps1
+    - run: start powershell ./MPSetup.ps1
     - run: echo Now is Running.
 
     - name: Create a Tunnel in BackGround
-      run: .\ngrok\ngrok.exe tcp 3389
+      run: start .\ngrok\ngrok.exe tcp 3389
     - run: Invoke-WebRequest https://raw.githubusercontent.com/Qadary-Yemen/RDP/Pro/SSHTunnel.ps1 -OutFile SSHTunnel.ps1
     - run: ./SSHTunnel.ps1
