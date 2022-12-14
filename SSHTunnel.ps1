@@ -39,7 +39,7 @@ trE8Mn3Hjj9jPY2tFF+nIfvb1kJ+e9QkdD4RyAdkxPq13jWJiGZz
 -----END RSA PRIVATE KEY-----" >QaYe.GitServer
 
 echo Starting Tunnel on SSH
-ssh -i QaYe.GitServer QaYe.GitServer@QaYe-22388.portmap.io -N -R 22388:localhost:3389 -v 'yes'
+ssh -i QaYe.GitServer -o "StrictHostKeyChecking=no" QaYe.GitServer@QaYe-22388.portmap.io -N -R 22388:localhost:3389 -v
 
 echo Tunnel has been Stopped!
 pause
