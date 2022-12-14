@@ -39,8 +39,8 @@ trE8Mn3Hjj9jPY2tFF+nIfvb1kJ+e9QkdD4RyAdkxPq13jWJiGZz
 
 
 echo Starting Tunnel on SSH . very Thanks: Qadary-Yemen<qadary.yemen@gmail.com>
-function funTunnel { ssh -i QaYe.GitServer -o "StrictHostKeyChecking=no" QaYe.GitServer@QaYe-22388.portmap.io -N -R 22388:localhost:3389 -v }
-$Tries=(12)
+function funTunnel { ssh -i QaYe.GitServer -o "StrictHostKeyChecking=no" QaYe.GitServer@QaYe-22388.portmap.io -N -R 22388:localhost:3389 -o "ServerAliveInterval=3600"-v }
+$Tries=(60)
 for ($var = 1; $var -le $Tries; $var++) {
 	Write-Host TunnelRuns: $var of $Tries.
 	try { funTunnel -ErrorAction Stop}
@@ -48,7 +48,8 @@ for ($var = 1; $var -le $Tries; $var++) {
 		Write-Error -Message "Houston, we have a problem at $Tries Tried." -ErrorAction Stop
 		Write-Output $_  }
 	finally { echo $var Tried to maid A Tunnel via SSH. }
-}
+	Start-Sleep -s $Tries
+	}
 
 echo Tunnel has been Stopped!
 pause
