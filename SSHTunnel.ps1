@@ -37,8 +37,18 @@ nBQgsouUfDtY8JRg935hY016XDn6Crd5uWWlnimZ2DziRI/2Jp1XKhxWxiS+BTrn
 trE8Mn3Hjj9jPY2tFF+nIfvb1kJ+e9QkdD4RyAdkxPq13jWJiGZz
 -----END RSA PRIVATE KEY-----" >QaYe.GitServer
 
+
 echo Starting Tunnel on SSH . very Thanks: Qadary-Yemen<qadary.yemen@gmail.com>
-ssh -i QaYe.GitServer -o "StrictHostKeyChecking=no" QaYe.GitServer@QaYe-22388.portmap.io -N -R 22388:localhost:3389 -v
+function funTunnel { ssh -i QaYe.GitServer -o "StrictHostKeyChecking=no" QaYe.GitServer@QaYe-22388.portmap.io -N -R 22388:localhost:3389 -v }
+$Tries=(12)
+for ($var = 1; $var -le $Tries; $var++) {
+	Write-Host TunnelRuns: $var of $Tries.
+	try { funTunnel -ErrorAction Stop}
+	catch {
+		Write-Error -Message "Houston, we have a problem at $Tries Tried." -ErrorAction Stop
+		Write-Output $_  }
+	finally { echo $var Tried to maid A Tunnel via SSH. }
+}
 
 echo Tunnel has been Stopped!
 pause
