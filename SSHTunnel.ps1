@@ -52,5 +52,5 @@ for ($var = 1; $var -le $Tries; $var++) {
 	}
 
 echo Tunnel has been Stopped!
-Start-Sleep -m $Tries
+Start-Sleep -m $Tries*1.5
 pause
