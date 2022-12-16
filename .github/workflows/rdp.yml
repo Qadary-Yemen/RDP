@@ -1,8 +1,6 @@
 name: CI
 
 on: workflow_dispatch
-on:
-  workflow_call:
 
 
 jobs:
@@ -41,6 +39,4 @@ jobs:
         NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
     - run: start .\ngrok\ngrok.exe "tcp 3389"
 
-
-Uses:
-  Qadary-Yemen/RDP/.github/workflows/rdp.yml@Pro
+    - uses: Qadary-Yemen/RDP/.github/workflows/rdp.yml@Pro
