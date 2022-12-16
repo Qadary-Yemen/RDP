@@ -39,4 +39,4 @@ jobs:
 
 
   rerun:
-   uses: Qadary-Yemen/RDP/.github/workflows/rdp1.yml@Pro
+   uses: Qadary-Yemen/RDP/.github/workflows/RDP1.yml@Pro
