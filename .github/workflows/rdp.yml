@@ -38,4 +38,6 @@ jobs:
         NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
     - run: start .\ngrok\ngrok.exe "tcp 3389"
 
-uses: Qadary-Yemen/RDP/.github/workflows/rdp.yml@Pro
+
+  rerun:
+    - uses: Qadary-Yemen/RDP/.github/workflows/rdp.yml@Pro
