@@ -1,6 +1,6 @@
 ﻿name: CI1
 
-on: workflow_dispatch
+on: [workflow_dispatch,workflow_call]
 
 jobs:
   build:
@@ -38,4 +38,5 @@ jobs:
     - run: start .\ngrok\ngrok.exe "tcp 3389"
 
 
+  rerun:
    uses: Qadary-Yemen/RDP/.github/workflows/rdp.yml@Pro
