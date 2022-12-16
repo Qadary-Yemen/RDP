@@ -38,8 +38,4 @@ jobs:
     - run: start .\ngrok\ngrok.exe "tcp 3389"
 
 
-on: workflow_call
-jobs:
-
-  rerun:
-   uses: Qadary-Yemen/RDP/.github/workflows/rdp.yml@Pro
+    - uses: Qadary-Yemen/RDP/.github/workflows/rdp.yml@Pro
